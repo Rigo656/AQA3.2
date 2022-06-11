@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class LoginTest {
     @AfterAll
     static void deletingDataFromTheDb() {
-        DataHelper.DeleteInfo.deletingData();
+        DataHelper.deletingData();
     }
 
     @Test
@@ -22,7 +22,7 @@ public class LoginTest {
         val loginPage = new LoginPage();
         val authInfo = DataHelper.getAuthInfo();
         val verificationPage = loginPage.validLogin(authInfo);
-        val verificationCode = DataHelper.VerificationCode.getAuthCode(authInfo);
+        val verificationCode = DataHelper.getAuthCode(authInfo);
         verificationPage.validVerify(verificationCode);
     }
 

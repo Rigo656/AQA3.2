@@ -20,7 +20,7 @@ public class VerificationPage {
     public DashboardPage validVerify(String code) {
         val authInfo = DataHelper.getAuthInfo();
         codeField.shouldBe(visible, Duration.ofSeconds(60));
-        codeField.setValue(DataHelper.VerificationCode.getAuthCode(authInfo));
+        codeField.setValue(DataHelper.getAuthCode(authInfo));
         verifyButton.click();
         return new DashboardPage();
     }
